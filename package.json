@@ -1,0 +1,21 @@
+{
+  "name": "date-template",
+  "version": "2.0.0",
+  "description": "Easy function to return template date.",
+  "main": "index.js",
+  "author": "serg <ss0sergey@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "gist",
+    "url": "https://gist.github.com/SergProduction/e08907ddfc81d50e37c2bc03a461f281"
+  },
+  "keywords": [
+    "date",
+    "date format",
+    "date template",
+    "time",
+    "time format",
+    "time template",
+    "template"
+  ]
+}
