@@ -123,9 +123,9 @@ var dateTemplate = function ( format, oldDate, middleware ) {
     D:  { key: /%0?D/g,   value: date.getDate(),         }, // Day, from 1 to 31
     Dw: { key: /%0?Dw/g,  value: date.getDay(),          }, // Day of the week 0-sunday, 6-saturday
     h:  { key: /%0?h/g,   value: date.getHours(),        }, // hourse
-    m: { key: /%0?m/g,   value: date.getMinutes(),      }, // minutes;
+    m:  { key: /%0?m/g,   value: date.getMinutes(),      }, // minutes;
     s:  { key: /%0?s/g,   value: date.getSeconds(),      }, // seconds
-    ms:  { key: /%0?ms/g,  value: date.getMilliseconds(), }, // milliseconds
+    ms: { key: /%0?ms/g,  value: date.getMilliseconds(), }, // milliseconds
   }
   tmp = middleware ? middleware(tmp) : tmp
   Object.keys(tmp).forEach(function (el) {
