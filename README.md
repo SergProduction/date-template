@@ -1,4 +1,4 @@
-## date-template
+# date-template
 
 1. Easy function of -30 lines of code
 1. Date output in any format
@@ -66,6 +66,7 @@ dateTemplate('%0h:%0m:%0s', milliseconds)
 
 ##### three parameters - middleware function
 
+middleware mount
 ```javascript
 var dateTemplate = require('date-template')
 
@@ -91,9 +92,12 @@ var middlewareMount = (date) => {
   return date
 }
 
-dateTemplate('Today is ~M~ ~D~, ~Y~', false, middleware)
+dateTemplate('Today is ~M~ ~D~, ~Y~', false, middlewareMount)
 // "Today is July 2, 2017"
+```
 
+middleware Am/Pm
+```javascript
 var middlewareAmPm = (date) => {
   date.h.value = date.h.value % 12
     ? date.h.value - 12 + 'pm'
