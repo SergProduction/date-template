@@ -1,6 +1,6 @@
 {
   "name": "date-template",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "Easy function to return template date.",
   "main": "index.js",
   "author": "serg <ss0sergey@gmail.com>",

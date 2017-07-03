@@ -3,6 +3,7 @@
 1. Easy function of -30 lines of code
 1. Date output in any format
 1. Change the date type
+1. No dependencies
  
 ### install
 ```$ npm install -S date-template```
@@ -17,7 +18,7 @@
 - ```%m``` minutes
 - ```%s``` seconds
 - ```%ms``` milliseconds
-- ```%0``` [special prefix](#special-prifix) for all template types
+- ```%0``` [special prefix](#special-prefix) for all template types
 
 ### use
 
@@ -52,7 +53,7 @@ var dateTemplate = require('date-template')
 // return other Date
 
 var oldDate = new Date()
-oldDate.setHours(-3)
+oldDate.setHours(oldDate.getHours() -3)
 
 dateTemplate('%0h:%0m:%0s', oldDate)
 // "17:09:07"
@@ -99,17 +100,25 @@ dateTemplate('Today is ~M~ ~D~, ~Y~', false, middlewareMount)
 middleware Am/Pm
 ```javascript
 var middlewareAmPm = (date) => {
-  date.h.value = date.h.value % 12
-    ? date.h.value - 12 + 'pm'
-    : date.h.value + 'am'
+  date.ampm = {
+    key: /%am:pm/g,
+    value: date.h.value / 12 > 1
+      ? 'pm'
+      : 'am'
+  }
+
+  date.h.value = date.h.value / 12 > 1
+    ? date.h.value - 12
+    : date.h.value
+
   return date
 }
 
-dateTemplate('%h', false, middlewareAmPm)
-// 8pm
+dateTemplate('%h:%0m %am:pm', false, middlewareAmPm)
+// 8:09 pm
 ```
 
-##### special prifix
+##### special prefix
 ```javascript
 dateTemplate('%h:%m:%s')
 // 9:9:9
