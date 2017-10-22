@@ -1,7 +1,7 @@
 {
   "name": "date-template",
-  "version": "2.0.5",
-  "description": "Easy function for returning date by template.",
+  "version": "2.0.10",
+  "description": "Easy function for returning date by template",
   "main": "index.js",
   "author": "serg <ss0sergey@gmail.com>",
   "license": "MIT",
@@ -17,5 +17,9 @@
     "time format",
     "time template",
     "template"
-  ]
+  ],
+  "devDependencies": {
+    "benchmark": "^2.1.4",
+    "moment": "^2.19.1"
+  }
 }
